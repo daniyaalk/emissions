@@ -1,0 +1,21 @@
+body{
+  background-color:  #1b2631;
+}
+.container{
+  text-align: center;
+}
+#usage-wrapper{
+  margin-top: 20vh;
+  font-size: 6em;
+}
+#usage-input{
+  background-color: inherit;
+
+  font-size: inherit;
+  width: 6em;
+  text-align: center;
+  color: #fff;
+
+  border-width: 0 0 2px 0;
+  border-color:  #515a5a;
+}
