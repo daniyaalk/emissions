@@ -7,12 +7,14 @@ body{
 #usage-wrapper{
   margin-top: 20vh;
   font-size: 6em;
+
+  color: #fff;
 }
 #usage-input{
   background-color: inherit;
 
   font-size: inherit;
-  width: 6em;
+  width: 4em;
   text-align: center;
   color: #fff;
 
