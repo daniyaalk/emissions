@@ -2,13 +2,13 @@ body{
   background-color:  #1b2631;
 }
 .container{
-  text-align: center;
 }
 #usage-wrapper{
   margin-top: 20vh;
   font-size: 6em;
 
   color: #fff;
+  text-align: center;
 }
 #usage-input{
   background-color: inherit;
@@ -20,4 +20,13 @@ body{
 
   border-width: 0 0 2px 0;
   border-color:  #515a5a;
+}
+#components{
+  margin-top: 10px;
+
+  color: #fff;
+  font-size: 2em;
+}
+.component{
+  padding: .5em;
 }
