@@ -4,7 +4,7 @@ body{
 .container{
 }
 #usage-wrapper{
-  margin-top: 20vh;
+  margin-top: 10vh;
   font-size: 6em;
 
   color: #fff;
@@ -31,10 +31,31 @@ body{
   padding: .5em;
 }
 .hidden-elem{
-  display: none;
 }
-#footnote{
-  margin-top: 50px;
+#CO2-wrapper{
+  margin: 50px;
+
+  font-size: 2em;
+
+  color: #fff;
+  text-align: center;
+}
+#CO2{
+  font-size: 3em;
+  margin: 20px;
+  padding: 20px;
+
+  width: 50%;
+  margin: auto;
+
+  color: #1b2631;
+  background-color: #eee;
+
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+.footnote{
+  margin-top: 20px;
   color: #fff;
   font-style: italic;
 }

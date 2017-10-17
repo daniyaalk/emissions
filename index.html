@@ -10,6 +10,42 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
   <title></title>
+
+  <script>
+    $(function(){
+
+      function updateElements(){
+
+        var kwh = $("#usage-input").val();
+
+        $("#bulb > .value").text(Math.round(kwh/1.440));
+        $("#ac > .value").text(Math.round(kwh/33.6));
+        $("#pc > .value").text(Math.round(kwh/3.6));
+
+        $("#coal > .value").text(Math.ceil(kwh*100/8)/100);
+        $("#oil > .value").text(Math.ceil(kwh*100/12)/100);
+        $("#gas > .value").text(Math.ceil(kwh*100/6.9)/100);
+
+        $("#CO2 > .value").text(Math.ceil(kwh*10/1.222)/10);
+      }
+
+      updateElements();
+      var elem = $("#usage-input");
+
+      // Save current value of element
+      elem.data('oldVal', elem.val());
+
+      // Look for changes in the value
+      elem.bind("propertychange change click keyup input paste", function(event){
+         // If value has changed...
+         if (elem.data('oldVal') != elem.val()) {
+          // Updated stored value
+          elem.data('oldVal', elem.val());
+          updateElements();
+        }
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="container">
@@ -19,18 +55,25 @@
     <div id="components">
       <div class="row">
         <div class="col-12 col-md-6">
-          <div id="bulb" class="component"><span>0</span> Light Bulb<span class="hidden-elem plural-s">s</span></div>
-          <div id="ac" class="component"><span>0</span> Air Conditioner<span class="hidden-elem plural-s">s</span></div>
-          <div id="pc" class="component"><span>0</span> Computer<span class="hidden-elem plural-s">s</span></div>
+          <div id="bulb" class="component appliance"><span class="value">0</span> Light Bulb<span class="hidden-elem plural-s">(s)</span></div>
+          <div id="ac" class="component appliance"><span class="value">0</span> Air Conditioner<span class="hidden-elem plural-s">(s)</span></div>
+          <div id="pc" class="component appliance"><span class="value">0</span> Computer<span class="hidden-elem plural-s">(s)</span></div>
         </div>
         <div class="col-12 col-md-6">
-          <div id="coal" class="component"><span>0</span> KG Coal</div>
-          <div id="oil" class="component"><span>0</span> L Oil</div>
-          <div id="gas" class="component"><span>0</span> L Natural Gas</div>
+          <div id="coal" class="component"><span class="value">0</span> KG Coal</div>
+          <div id="oil" class="component"><span class="value">0</span> L Oil</div>
+          <div id="gas" class="component"><span class="value">0</span> L Natural Gas</div>
         </div>
       </div>
     </div>
-    <div id="footnote">Appliance usage statistics are in terms of daily energy consumption</div>
+    <div class="footnote">Appliance usage statistics are in terms of daily energy consumption.</div>
+    <div id="CO2-wrapper">
+      <div id="CO2"><span class="value">1</span> lbs</div>
+      <div>
+        CO<sub>2</sub> Emitted
+      </div>
+    </div>
+    <div class="footnote">Based on average U.S. power source distribution.</div>
   </div>
 </body>
 </html>
