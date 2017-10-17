@@ -18,6 +18,10 @@
 
         var kwh = $("#usage-input").val();
 
+        if(kwh < 0){
+          kwh = 0;
+        }
+
         $("#bulb > .value").text(Math.round(kwh/1.440));
         $("#ac > .value").text(Math.round(kwh/33.6));
         $("#pc > .value").text(Math.round(kwh/3.6));
