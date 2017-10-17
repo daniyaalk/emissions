@@ -30,3 +30,11 @@ body{
 .component{
   padding: .5em;
 }
+.hidden-elem{
+  display: none;
+}
+#footnote{
+  margin-top: 50px;
+  color: #fff;
+  font-style: italic;
+}

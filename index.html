@@ -14,22 +14,23 @@
 <body>
   <div class="container">
     <div id="usage-wrapper">
-      <input type="number" id="usage-input" length="5" placeholder="Usage"/> kWh
+      <input type="number" id="usage-input" length="3" value="1" placeholder="Usage"/> kWh
     </div>
     <div id="components">
       <div class="row">
         <div class="col-12 col-md-6">
-          <div class="component">Bulb</div>
-          <div class="component">Air Conditioner</div>
-          <div class="component">Computer</div>
+          <div id="bulb" class="component"><span>0</span> Light Bulb<span class="hidden-elem plural-s">s</span></div>
+          <div id="ac" class="component"><span>0</span> Air Conditioner<span class="hidden-elem plural-s">s</span></div>
+          <div id="pc" class="component"><span>0</span> Computer<span class="hidden-elem plural-s">s</span></div>
         </div>
         <div class="col-12 col-md-6">
-          <div class="component">Coal</div>
-          <div class="component">Oil</div>
-          <div class="component">Natural Gas</div>
+          <div id="coal" class="component"><span>0</span> KG Coal</div>
+          <div id="oil" class="component"><span>0</span> L Oil</div>
+          <div id="gas" class="component"><span>0</span> L Natural Gas</div>
         </div>
       </div>
     </div>
+    <div id="footnote">Appliance usage statistics are in terms of daily energy consumption</div>
   </div>
 </body>
 </html>
