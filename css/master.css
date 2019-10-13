@@ -3,6 +3,13 @@ body{
 }
 .container{
 }
+
+.title {
+    color: white;
+    font-size: 10vh;
+    text-align: center;
+    padding-top: 10%;
+}
 #usage-wrapper{
   margin-top: 10vh;
   font-size: 6em;
